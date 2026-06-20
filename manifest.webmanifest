@@ -1,0 +1,14 @@
+{
+  "name": "Amp Academy — NEC 2026 Journeyman",
+  "short_name": "Journeyman 2026",
+  "description": "NEC 2026 Journeyman Electrician exam prep — Amp Academy. Installable, offline. Derived edition.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#0D1B2A",
+  "theme_color": "#0D1B2A",
+  "icons": [
+    { "src": "icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
