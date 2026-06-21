@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <!-- AA Journeyman NEC2017 v1.0 :: full SAS surface added 2026-06-18 (PWA manifest + service worker aa-jrny-2017-v1 + install; offline incl. fonts). Content unchanged. -->
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>NEC 2026 Journeyman Electrician — Amp Academy</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Libre+Baskerville:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
-<link rel="manifest" href="manifest.webmanifest">
 <meta name="theme-color" content="#0D1B2A">
 <link rel="apple-touch-icon" href="icons/icon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
 /* ───── RESET ───────────────────────────────────────── */
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --navy:#0D1B2A; --blue:#1565C0; --amber:#F4A300;
+  --navy:#0D1B2A; --blue:#1565C0; --amber:#F2A93B;
   --white:#fff; --off:#F7F9FC; --border:#E2E8F0;
   --text:#1E293B; --muted:#64748B; --light:#94A3B8;
   --sidebar:272px; --hdr:54px;
@@ -109,8 +109,8 @@ body{font-family:var(--ff);color:var(--text);background:var(--off);font-size:14p
 }
 
 /* Module color overrides */
-.mg[data-mod="00"] .ml { border-left-color: #F4A300; }
-.mg[data-mod="00"] .li.active { border-left-color: #F4A300; background: #F4A30018; }
+.mg[data-mod="00"] .ml { border-left-color: #F2A93B; }
+.mg[data-mod="00"] .li.active { border-left-color: #F2A93B; background: #F2A93B18; }
 .mg[data-mod="01"] .ml { border-left-color: #1565C0; }
 .mg[data-mod="01"] .li.active { border-left-color: #1565C0; background: #1565C018; }
 .mg[data-mod="02"] .ml { border-left-color: #0891B2; }
@@ -139,8 +139,8 @@ body{font-family:var(--ff);color:var(--text);background:var(--off);font-size:14p
 .mg[data-mod="13"] .li.active { border-left-color: #16A34A; background: #16A34A18; }
 .mg[data-mod="14"] .ml { border-left-color: #6366F1; }
 .mg[data-mod="14"] .li.active { border-left-color: #6366F1; background: #6366F118; }
-.mg[data-mod="15"] .ml { border-left-color: #F4A300; }
-.mg[data-mod="15"] .li.active { border-left-color: #F4A300; background: #F4A30018; }
+.mg[data-mod="15"] .ml { border-left-color: #F2A93B; }
+.mg[data-mod="15"] .li.active { border-left-color: #F2A93B; background: #F2A93B18; }
 
 /* ───── MAIN ─────────────────────────────────────────── */
 #main{flex:1;display:flex;flex-direction:column;overflow:hidden}
@@ -302,36 +302,39 @@ body{font-family:var(--ff);color:var(--text);background:var(--off);font-size:14p
 
 /* Amp Academy in-course Load Calculator widget + edition notes (edition build 2026-06-18) */
 .aa-embed-calc{border:1px solid #1b3a57;border-radius:12px;margin:18px 0;background:#0d1b2a;color:#e8eef5;overflow:hidden;font-size:14px}
-.aec-hd{background:#11263b;padding:12px 16px;font-weight:700;color:#F4A300;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.aec-hd{background:#11263b;padding:12px 16px;font-weight:700;color:#F2A93B;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
 .aec-tag{font-weight:500;font-size:11px;color:#9db4cc;background:#0d1b2a;padding:3px 8px;border-radius:20px}
 .aec-form{padding:14px 16px 4px}
 .aec-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:10px}
 .aec-f{display:flex;flex-direction:column;gap:3px;font-size:11px;color:#9db4cc}
 .aec-f input,.aec-f select{padding:7px 8px;border:1px solid #2a4a66;border-radius:6px;background:#0a1622;color:#fff;font-size:13px;font-family:inherit}
 .aec-sub{font-size:11px;color:#9db4cc;margin:2px 0 8px;text-transform:uppercase;letter-spacing:.04em}
-.aec-btn{margin:0 16px 14px;background:#F4A300;color:#0D1B2A;border:0;border-radius:8px;padding:9px 18px;font-weight:700;cursor:pointer;font-family:inherit}
+.aec-btn{margin:0 16px 14px;background:#F2A93B;color:#0D1B2A;border:0;border-radius:8px;padding:9px 18px;font-weight:700;cursor:pointer;font-family:inherit}
 .aec-out{padding:0 16px 16px}
 .aec-kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px}
 .aec-kpi{background:#11263b;border-radius:8px;padding:12px;text-align:center}
-.aec-kn{font-size:22px;font-weight:800;color:#F4A300}
+.aec-kn{font-size:22px;font-weight:800;color:#F2A93B}
 .aec-kl{font-size:10px;color:#9db4cc;text-transform:uppercase;letter-spacing:.04em;margin-top:2px}
 .aec-tbl{width:100%;border-collapse:collapse;margin-bottom:10px;font-size:13px}
 .aec-tbl td{padding:6px 8px;border-bottom:1px solid #1b3a57}
 .aec-nec{color:#7fa0bf;font-size:11px;width:90px}
 .aec-v{text-align:right;font-variant-numeric:tabular-nums;font-weight:600;width:90px}
 .aec-dem{color:#bfe3c7}
-.aec-tot td{background:#11263b;font-weight:800;color:#F4A300}
+.aec-tot td{background:#11263b;font-weight:800;color:#F2A93B}
 .aec-note{font-size:11px;color:#9db4cc;line-height:1.5;border-top:1px solid #1b3a57;padding-top:10px;margin-top:4px}
 .aa-ednote{border:1px solid #d8a200;background:#fff8e8;border-radius:10px;padding:14px 16px;margin:16px 0}
 .aa-ednote h3{margin-top:0}
 .aa-ednote table{width:100%;border-collapse:collapse;font-size:14px}
 .aa-ednote td{padding:6px 8px;border-bottom:1px solid #eadfbf;vertical-align:top}
 .aa-ednote .sec{font-weight:700;white-space:nowrap;width:110px;color:#7a5a00}
-.aa-derived{border-left:4px solid #F4A300;background:#fff8e8;border-radius:0 8px 8px 0;padding:12px 16px;margin:14px 0;font-size:14px;line-height:1.55}
+.aa-derived{border-left:4px solid #F2A93B;background:#fff8e8;border-radius:0 8px 8px 0;padding:12px 16px;margin:14px 0;font-size:14px;line-height:1.55}
 @media(max-width:720px){.aec-grid{grid-template-columns:repeat(2,1fr)}.aec-kpis{grid-template-columns:1fr}.aec-nec{width:auto}}
+h1,h2,h3,h4{font-family:"Syne",sans-serif!important}body{font-family:"Inter",sans-serif!important}
 </style>
+<style id="aa-theme">html[data-theme="dark"]{--off:#0E1422;--white:#161E2E;--border:#2A3550;--text:#EAEEF6;--muted:#9AA4B6;--light:#7E8AA0}html[data-theme="dark"] body{background:#0E1422;color:#EAEEF6}.aa-tgl{position:fixed;top:10px;right:12px;z-index:99999;font-size:15px;line-height:1;background:rgba(20,30,50,.55);color:#fff;border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:7px 10px;cursor:pointer}</style>
 </head>
 <body>
+<button class="aa-tgl" onclick="aaTgl()" aria-label="Toggle light or dark">◐</button>
 <div id="app">
 
 <!-- HEADER -->
@@ -3918,12 +3921,12 @@ toggleMod('00');   // open orientation by default
 <script>
 /* Amp Academy PWA — install + offline (SAS §2.3, added 2026-06-18) */
 if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(function(){});
-(function(){var d=null;window.addEventListener('beforeinstallprompt',function(e){e.preventDefault();d=e;var b=document.getElementById('aa-install');if(!b){b=document.createElement('button');b.id='aa-install';b.textContent='Install course';b.style.cssText='position:fixed;right:14px;bottom:14px;z-index:300;background:#F4A300;color:#0D1B2A;border:0;border-radius:10px;padding:10px 16px;font-weight:700;cursor:pointer;font-family:inherit';document.body.appendChild(b);}b.style.display='block';b.onclick=function(){b.style.display='none';if(d){d.prompt();d=null;}};});})();
+(function(){var d=null;window.addEventListener('beforeinstallprompt',function(e){e.preventDefault();d=e;var b=document.getElementById('aa-install');if(!b){b=document.createElement('button');b.id='aa-install';b.textContent='Install course';b.style.cssText='position:fixed;right:14px;bottom:14px;z-index:300;background:#F2A93B;color:#0D1B2A;border:0;border-radius:10px;padding:10px 16px;font-weight:700;cursor:pointer;font-family:inherit';document.body.appendChild(b);}b.style.display='block';b.onclick=function(){b.style.display='none';if(d){d.prompt();d=null;}};});})();
 </script>
 
 <style>
-.jt-tab{position:fixed;left:16px;bottom:16px;z-index:200;background:#0D7C66;color:#fff;border:0;border-radius:24px;padding:11px 18px;font-weight:700;cursor:pointer;font-family:inherit;box-shadow:0 4px 14px rgba(0,0,0,.25)}
-.jt-panel{position:fixed;left:16px;bottom:16px;z-index:201;width:340px;max-width:calc(100vw - 32px);background:#0d1b2a;color:#e8eef5;border:1px solid #1b3a57;border-radius:14px;display:none;flex-direction:column;overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.35)}
+.jt-tab{position:fixed;right:16px;bottom:16px;z-index:200;background:#0D7C66;color:#fff;border:0;border-radius:24px;padding:11px 18px;font-weight:700;cursor:pointer;font-family:inherit;box-shadow:0 4px 14px rgba(0,0,0,.25)}
+.jt-panel{position:fixed;right:16px;bottom:16px;z-index:201;width:340px;max-width:calc(100vw - 32px);background:#0d1b2a;color:#e8eef5;border:1px solid #1b3a57;border-radius:14px;display:none;flex-direction:column;overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.35)}
 .jt-panel.open{display:flex}
 .jt-hd{background:#11263b;padding:10px 14px;display:flex;align-items:center;justify-content:space-between}
 .jt-hd .t{font-weight:700;font-size:13px}.jt-hd .s{font-size:10px;color:#9db4cc;font-family:ui-monospace,monospace}
@@ -3970,5 +3973,6 @@ window.AA_TUTOR = window.AA_TUTOR || { endpoint:"https://amp-academy-tutor.ampac
   }
 })();
 </script>
+<script>function aaTgl(){var h=document.documentElement,d=h.getAttribute("data-theme")==="dark";h.setAttribute("data-theme",d?"light":"dark");try{localStorage.setItem("aa.theme",d?"light":"dark")}catch(e){}}(function(){try{var t=localStorage.getItem("aa.theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}})();</script>
 </body>
 </html>
